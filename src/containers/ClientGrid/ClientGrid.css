@@ -9,6 +9,9 @@
     width: 33%;
     min-width: 350px;
     max-width: 400px;
+    height: 600px;
     margin: 1%;
     overflow-y: auto;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 2%;
 }

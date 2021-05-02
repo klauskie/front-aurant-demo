@@ -9,7 +9,7 @@ const EmptyClient = ( {addToGridCallback} ) => {
     }
 
     return (
-        <div onClick={onClickHandle} className="client-container empty-container">
+        <div onClick={onClickHandle} className="empty-container">
             <AiOutlinePlusCircle className="center-icon" size={100} />
         </div>
     )

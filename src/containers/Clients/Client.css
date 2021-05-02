@@ -1,7 +1,5 @@
 .client-container {
-    height: 600px;
-    border: 1px solid rgb(53, 53, 53);
-    border-radius: 2%;
+    /* nothing */
 }
 
 .empty-container {
@@ -9,6 +7,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    height: 100%;
 }
 
 .center-icon {
