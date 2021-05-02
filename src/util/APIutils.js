@@ -3,7 +3,7 @@ import { PARTY_API_URL, SESSION_API_URL, CATALOG_API_URL } from './Constants';
 
 const guestLoginPOST = async (name, vendorId) => {
     const url = `${SESSION_API_URL}/session-api/guest-login`
-    console.log("API CALL: " + url)
+    // console.log("API CALL: " + url)
 
     let requestData = {
         name: name,
@@ -11,40 +11,40 @@ const guestLoginPOST = async (name, vendorId) => {
     }
     try {
         const resp = await axios.post(url, requestData);
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't post data. " + err);
+        // console.error("Couldn't post data. " + err);
         return null
     }
 };
 
 const createNewPartyPOST = async (token) => {
     const url = `${PARTY_API_URL}/party-api/party`
-    console.log("API CALL: " + url)
+    // console.log("API CALL: " + url)
 
     let requestData = {}
     try {
         const resp = await axios.post(url, requestData, {headers: getHeaders(token)} );
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't post data. " + err);
+        // console.error("Couldn't post data. " + err);
         return null
     }
 }
 
 const joinPartyPUT = async (partyId, token) => {
     const url = `${PARTY_API_URL}/party-api/party/${partyId}`
-    console.log("API CALL: " + url)
+    // console.log("API CALL: " + url)
 
     let requestData = {}
     try {
         const resp = await axios.put(url, requestData, {headers: getHeaders(token)} );
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't put data. " + err);
+        // console.error("Couldn't put data. " + err);
         return null
     }
 }
@@ -55,38 +55,38 @@ const fetchMenuGET = async (vendorId) => {
 
     try {
         const resp = await axios.get(url);
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't fetch data. " + err);
+        // console.error("Couldn't fetch data. " + err);
         return null
     }
 }
 
 const sendClientOrderPOST = async (requestData, partyId, token) => {
     const url = `${PARTY_API_URL}/party-api/order/${partyId}`
-    console.log("API CALL: " + url)
+    // console.log("API CALL: " + url)
 
     try {
         const resp = await axios.post(url, requestData, {headers: getHeaders(token)} );
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't post data. " + err);
+        // console.error("Couldn't post data. " + err);
         return null
     }
 }
 
 const fetchPartyOrderGET = async (partyId, token) => {
     const url = `${PARTY_API_URL}/party-api/party-order/${partyId}`
-    console.log("API CALL: " + url)
+    // console.log("API CALL: " + url)
 
     try {
         const resp = await axios.get(url, {headers: getHeaders(token)});
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't fetch data. " + err);
+        // console.error("Couldn't fetch data. " + err);
         return null
     }
 }
@@ -107,15 +107,15 @@ const fetchPartyGET = async (partyId, token) => {
 
 const updatePartyStatusPUT = async (partyId, token) => {
     const url = `${PARTY_API_URL}/party-api/party-status/${partyId}`
-    console.log("API CALL: " + url)
+    // console.log("API CALL: " + url)
 
     let requestData = {ready: true}
     try {
         const resp = await axios.put(url, requestData, {headers: getHeaders(token)} );
-        console.log(resp.data);
+        // console.log(resp.data);
         return resp.data
     } catch (err) {
-        console.error("Couldn't put data. " + err);
+        // console.error("Couldn't put data. " + err);
         return null
     }
 }

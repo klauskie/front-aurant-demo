@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { useCookies } from 'react-cookie'
 import { createNewPartyPOST, guestLoginPOST } from '../../util/APIutils';
-import { getPartyIdKey, getTokenKey, KEY_ACCESS_TOKEN, KEY_TAG, KEY_VENDOR_ID, SIX_HOURS, STATE_JOIN_PARTY, STATE_WAIT_ROOM } from '../../util/Constants';
+import { getPartyIdKey, getTokenKey, KEY_VENDOR_ID, SIX_HOURS, STATE_JOIN_PARTY, STATE_WAIT_ROOM } from '../../util/Constants';
 
 const CreateParty = (props) => {
-    const [cookies, setCookie] = useCookies([getTokenKey(props.id), getPartyIdKey(props.id)])
+    const [, setCookie] = useCookies([getTokenKey(props.id), getPartyIdKey(props.id)])
 
     let [name, setName] = useState("");
-    let [token, setToken] = useState("");
-    let [partyId, setPartyId] = useState("");
+    let [, setToken] = useState("");
+    let [, setPartyId] = useState("");
 
     // let vendorId = props.match.params.vendorId
     let vendorId = props.vendorId

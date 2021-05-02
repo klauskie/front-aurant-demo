@@ -5,7 +5,7 @@ import TopMenu from '../../components/TopMenu/TopMenu';
 import ItemDetailView from '../../components/ItemDetailView/ItemDetailView';
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
-import { getPartyIdKey, getTokenKey, KEY_ACCESS_TOKEN, KEY_TAG, KEY_VENDOR_ID } from '../../util/Constants';
+import { getPartyIdKey, getTokenKey, KEY_VENDOR_ID } from '../../util/Constants';
 import { fetchMenuGET, sendClientOrderPOST } from '../../util/APIutils';
 import './Menu.css'; 
 

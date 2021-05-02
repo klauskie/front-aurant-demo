@@ -1,6 +1,5 @@
 import React from 'react'
 import { instanceOf } from 'prop-types';
-import { useHistory } from "react-router-dom";
 import { withCookies, Cookies } from 'react-cookie';
 import './ErrorPage.css';
 import errorImg from'./error.png';
@@ -34,7 +33,7 @@ class ErrorBoundary extends React.Component {
         const vendorId = localStorage.getItem(KEY_VENDOR_ID);
 
         let data = {}
-        if ( this.state.token != "") {
+        if ( this.state.token !== "") {
             this.props.history.replace("/menu", data)
         } else if (vendorId != null) {
             this.props.history.replace(`/join-party/${vendorId}`, data)

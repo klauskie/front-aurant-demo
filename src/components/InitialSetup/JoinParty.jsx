@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { useCookies } from 'react-cookie'
-import { KEY_ACCESS_TOKEN, KEY_TAG, SIX_HOURS, KEY_VENDOR_ID, getPartyIdKey, STATE_WAIT_ROOM, STATE_CREATE_PARTY, getTokenKey } from '../../util/Constants';
+import { SIX_HOURS, KEY_VENDOR_ID, getPartyIdKey, STATE_WAIT_ROOM, STATE_CREATE_PARTY, getTokenKey } from '../../util/Constants';
 import { guestLoginPOST, joinPartyPUT } from '../../util/APIutils';
 import './InitialSetup.css';
 
 
 const JoinParty = (props) => {
-    const [cookies, setCookie] = useCookies([getTokenKey(props.id), getPartyIdKey(props.id)])
+    const [, setCookie] = useCookies([getTokenKey(props.id), getPartyIdKey(props.id)])
     
     let [name, setName] = useState("");
     let [tag, setTag] = useState("");
-    let [token, setToken] = useState("");
+    let [, setToken] = useState("");
 
     let vendorId = props.vendorId
 
@@ -85,7 +85,7 @@ const JoinParty = (props) => {
                         </div>
 
                         <div className="form-group">
-                            <button onClick={(e) => joinParty()} disabled={name.length===0 && tag.length===0} type="submit" className="btn btn-danger btn-block">Join Party</button>
+                            <button onClick={(e) => joinParty()} disabled={name.length===0 || tag.length===0} type="submit" className="btn btn-danger btn-block">Join Party</button>
                         </div>
 
                     </div>

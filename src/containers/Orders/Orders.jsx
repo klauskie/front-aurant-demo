@@ -4,7 +4,7 @@ import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
 import OrderTable from '../../components/OrderList/OrderTable';
 import ToggleButton from '../../components/ToggleButton/ToggleButton';
-import { getPartyIdKey, getTokenKey, KEY_ACCESS_TOKEN, KEY_TAG, KEY_VENDOR_ID } from '../../util/Constants';
+import { getPartyIdKey, getTokenKey, KEY_VENDOR_ID } from '../../util/Constants';
 import { fetchPartyOrderGET } from '../../util/APIutils';
 
 

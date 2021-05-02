@@ -41,6 +41,8 @@ class Client extends Component {
                 return this.wrapComponent(<Menu id={this.state.id} vendorId={VENDOR_ID} callback={(s) => this.updateShowingState(s)} />)
             case STATE_ORDER:
                 return this.wrapComponent(<Orders id={this.state.id} vendorId={VENDOR_ID} callback={(s) => this.updateShowingState(s)} />)
+            default:
+                return this.wrapComponent(<CreateParty id={this.state.id} vendorId={VENDOR_ID} callback={(s) => this.updateShowingState(s)} />)
         }
     }
 }

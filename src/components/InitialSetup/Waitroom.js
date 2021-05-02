@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { instanceOf } from 'prop-types';
 import { withCookies, Cookies } from 'react-cookie';
-import { getPartyIdKey, getTokenKey, KEY_ACCESS_TOKEN, KEY_TAG, KEY_VENDOR_ID, STATE_JOIN_PARTY, STATE_MENU } from '../../util/Constants';
+import { getPartyIdKey, getTokenKey, KEY_VENDOR_ID, STATE_JOIN_PARTY, STATE_MENU } from '../../util/Constants';
 import { fetchPartyGET, updatePartyStatusPUT } from '../../util/APIutils';
 import './InitialSetup.css';
 
