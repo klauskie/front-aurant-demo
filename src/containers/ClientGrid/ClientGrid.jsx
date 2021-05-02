@@ -1,51 +1,41 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import Client from '../Clients/Client';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
-import './ClientGrid.css'
 import EmptyClient from './EmptyClient';
+import './ClientGrid.css'
 
-class ClientGrid extends Component {
+const ClientGrid = () => {
 
-    state = {
-        list: [<Client id={0}/>]
-    }
+    const [list, setList] = useState([<Client id={0}/>])
 
-    componentDidMount() {
-        this.setState({
-            list: [...this.state.list, <EmptyClient addToGridCallback={this.appendClient} />]
-        })
-    }
+    useEffect(() => {
+        const eList = [<EmptyClient addToGridCallback={() => appendClient()} />]
+        setList([...list, ...eList])
+    }, [])
 
-    appendClient() {
+    const appendClient = () => {
         console.log('appendClient called')
-        console.log(this.state)
-        /*
-        let newList = this.state.list
-        newList.splice(0, newList.length, <Client id={newList.length-1} />)
 
-        this.setState({
-            list: newList
-        })
-        */
+        const nId = list.length
+
+        setList(old => [...old.slice(0, old.length-1), <Client id={nId} />, old[old.length-1]])
     }
 
-    render () {
-        return (
-            <div className="client-grid">
-                {
-                    this.state.list.map((client, index) => {
-                        return (
-                            <div className="item" key={index} >
-                                <ErrorBoundary>
-                                    {client}
-                                </ErrorBoundary>
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        )
-    }
+    return (
+        <div className="client-grid">
+            {
+                list.map((client, index) => {
+                    return (
+                        <div className="item" key={index} >
+                            <ErrorBoundary>
+                                {client}
+                            </ErrorBoundary>
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
 }
 
 export default ClientGrid;

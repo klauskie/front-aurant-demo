@@ -80,7 +80,7 @@ const CreateParty = (props) => {
                         </div>
 
                         <div className="form-group">
-                            <button onClick={(e) => createNewParty()} type="submit" className="btn btn-danger btn-block">Create Party</button>
+                            <button onClick={(e) => createNewParty()} disabled={name.length===0} type="submit" className="btn btn-danger btn-block">Create Party</button>
                         </div>
 
                     </div>

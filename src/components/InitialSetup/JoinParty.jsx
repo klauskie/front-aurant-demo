@@ -85,7 +85,7 @@ const JoinParty = (props) => {
                         </div>
 
                         <div className="form-group">
-                            <button onClick={(e) => joinParty()} type="submit" className="btn btn-danger btn-block">Join Party</button>
+                            <button onClick={(e) => joinParty()} disabled={name.length===0 && tag.length===0} type="submit" className="btn btn-danger btn-block">Join Party</button>
                         </div>
 
                     </div>
