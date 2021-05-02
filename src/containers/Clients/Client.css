@@ -1,0 +1,24 @@
+.client-container {
+    height: 600px;
+    border: 1px solid rgb(53, 53, 53);
+    border-radius: 2%;
+}
+
+.empty-container {
+    background-color: rgb(231, 231, 231);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.center-icon {
+    display: block;
+    margin: 0 auto;
+    opacity: 0.5;
+}
+
+.empty-container:hover .center-icon {
+    color: red;
+    width: 30%;
+    height: 30%;
+}
