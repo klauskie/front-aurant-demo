@@ -39,7 +39,7 @@ const ItemDetailView = ({ itemBundle, orderCallback }) => {
             <div className="container">
 
                 <div className="row name-block row-item ">{itemBundle.name}</div>
-                <div className="rowrow-item ">{itemBundle.description}</div>
+                <div className="row row-item ">{itemBundle.description}</div>
 
                 <div className="row row-item ">
                     <input className="col-sm input-box-lr" onChange={(e) => {setInstructions(e.target.value)}} type="text" placeholder="Add instructions" />
@@ -67,8 +67,8 @@ const ItemDetailView = ({ itemBundle, orderCallback }) => {
                     </span>
                 </div>
                 
-                <div className="justify-content-center">
-                    <button onClick={prepareDataOrder} type="button" className="bottom-block btn btn-dark">
+                <div className="row row-item justify-content-center">
+                    <button onClick={prepareDataOrder} type="button" className="btn btn-dark">
                         Add to cart: ${itemBundle.price * parseFloat(quantity)}
                     </button>
                 </div>

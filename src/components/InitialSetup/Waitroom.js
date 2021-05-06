@@ -13,7 +13,7 @@ class WaitRoomComponent extends Component {
 
     state = {
         pollingCount: 0,
-        delay: 5000,
+        delay: 3000,
         clients: [],
         tag: this.props.cookies.get(getPartyIdKey(this.props.id)) || "",
         token: this.props.cookies.get(getTokenKey(this.props.id)) || "",

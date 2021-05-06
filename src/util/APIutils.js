@@ -2,7 +2,7 @@ import axios from 'axios';
 import { PARTY_API_URL, SESSION_API_URL, CATALOG_API_URL } from './Constants';
 
 const guestLoginPOST = async (name, vendorId) => {
-    const url = `${SESSION_API_URL}/session-api/guest-login`
+    const url = `${SESSION_API_URL}/api/guest-login`
     // console.log("API CALL: " + url)
 
     let requestData = {
@@ -20,7 +20,7 @@ const guestLoginPOST = async (name, vendorId) => {
 };
 
 const createNewPartyPOST = async (token) => {
-    const url = `${PARTY_API_URL}/party-api/party`
+    const url = `${PARTY_API_URL}/api/party`
     // console.log("API CALL: " + url)
 
     let requestData = {}
@@ -35,7 +35,7 @@ const createNewPartyPOST = async (token) => {
 }
 
 const joinPartyPUT = async (partyId, token) => {
-    const url = `${PARTY_API_URL}/party-api/party/${partyId}`
+    const url = `${PARTY_API_URL}/api/party/${partyId}`
     // console.log("API CALL: " + url)
 
     let requestData = {}
@@ -64,7 +64,7 @@ const fetchMenuGET = async (vendorId) => {
 }
 
 const sendClientOrderPOST = async (requestData, partyId, token) => {
-    const url = `${PARTY_API_URL}/party-api/order/${partyId}`
+    const url = `${PARTY_API_URL}/api/order/${partyId}`
     // console.log("API CALL: " + url)
 
     try {
@@ -78,7 +78,7 @@ const sendClientOrderPOST = async (requestData, partyId, token) => {
 }
 
 const fetchPartyOrderGET = async (partyId, token) => {
-    const url = `${PARTY_API_URL}/party-api/party-order/${partyId}`
+    const url = `${PARTY_API_URL}/api/party-order/${partyId}`
     // console.log("API CALL: " + url)
 
     try {
@@ -92,7 +92,7 @@ const fetchPartyOrderGET = async (partyId, token) => {
 }
 
 const fetchPartyGET = async (partyId, token) => {
-    const url = `${PARTY_API_URL}/party-api/party/${partyId}`
+    const url = `${PARTY_API_URL}/api/party/${partyId}`
     console.log("API CALL: " + url)
 
     try {
@@ -106,7 +106,7 @@ const fetchPartyGET = async (partyId, token) => {
 }
 
 const updatePartyStatusPUT = async (partyId, token) => {
-    const url = `${PARTY_API_URL}/party-api/party-status/${partyId}`
+    const url = `${PARTY_API_URL}/api/party-status/${partyId}`
     // console.log("API CALL: " + url)
 
     let requestData = {ready: true}
